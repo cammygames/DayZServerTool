@@ -138,7 +138,11 @@ namespace DayZServerTool
             
             if (serverProcess != null)
             {
-                serverProcess.Kill();
+                try
+                {
+                    serverProcess.Kill();
+                } catch {}
+
                 startServer.Text = "Start Server";
                 serverProcess = null;
             }
